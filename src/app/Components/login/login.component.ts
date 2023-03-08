@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { SocialAuthService } from "angularx-social-login";
-import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
+// import { SocialAuthService } from "angularx-social-login";
+// import { FacebookLoginProvider, GoogleLoginProvider } from "angularx-social-login";
 
 @Component({
   selector: 'app-login',
@@ -22,7 +22,8 @@ export class LoginComponent implements OnInit {
     private toastr: ToastrService,
     private router: Router,
     private auth:AuthService,
-    private SocialauthService: SocialAuthService) { }
+    // private SocialauthService: SocialAuthService
+    ) { }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -65,14 +66,14 @@ export class LoginComponent implements OnInit {
     }, 1500);
   }
 
-  signInGoogle(){
-    console.log("undefined gapi");
-    console.log("Google Sign In");
-    this.SocialauthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
-      (res) => {
-        console.log("Google Sign In Response", res.name);
-    },(err) => {
-      console.log("Google Sign In Error", err);
-    })
-  }
+  // signInGoogle(){
+  //   console.log("undefined gapi");
+  //   console.log("Google Sign In");
+  //   this.SocialauthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
+  //     (res) => {
+  //       console.log("Google Sign In Response", res.name);
+  //   },(err) => {
+  //     console.log("Google Sign In Error", err);
+  //   })
+  // }
 }
