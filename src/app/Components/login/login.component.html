@@ -1,1 +1,71 @@
-<p>login works!</p>
+<div class="container">
+    <div class="container_content">
+        <div class="container_wrapper">
+            <!-- <img class="signin_logo" src="../../../assets/images/logo.svg" alt="" /> -->
+            <!-- <div class="form-head" style="font-weight:500">
+                <p class="head_bounce" style="font-size: 35px ; color: #4285F4">G</p>
+                <p class="head_bounce" style="font-size: 30px ; color: #DB4437">o</p>
+                <p class="head_bounce" style="font-size: 35px ; color: #F4B400">o</p>
+                <p class="head_bounce" style="font-size: 30px ; color: #4285F4">g</p>
+                <p class="head_bounce" style="font-size: 35px ; color: #0F9D58">l</p>
+                <p class="head_bounce" style="font-size: 30px ; color: #DB4437">e</p>
+            </div> -->
+            <h1 class="container_title">Sign in</h1>
+            <p class="container_subtitle">Use your Google Account</p>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="container_form">
+                <mat-form-field appearance="outline" class="email_input ">
+                    <mat-label>Email</mat-label>
+                    <input matInput placeholder="" formControlName="emailId">
+                    <mat-error *ngIf="submitted && loginForm.get('emailId')?.hasError('required')">Email Id is
+                        required</mat-error>
+                    <mat-error *ngIf="submitted && loginForm.get('emailId')?.errors?.['pattern']">Email Id is not
+                        valid</mat-error>
+                    <!-- <mat-hint>You can use letters, numbers & periods</mat-hint> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="password_input">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="" [type]="showPass ? 'password': 'text'" formControlName="password">
+                    <mat-error *ngIf="submitted && loginForm.get('password')?.hasError('required')">Password is
+                        required</mat-error>
+                    <mat-error *ngIf="submitted && loginForm.get('password')?.errors?.['pattern']">Password is not
+                        valid</mat-error>
+                    <!-- <mat-hint>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint> -->
+                </mat-form-field>
+                <div class="forgot_text">
+                    <a mat-button class="btn-basic container_button text_bold" (click)="toggleForgotPass()">Forgot
+                        Password..??</a>
+                    <section class="checkbox_input">
+                        <mat-checkbox class="checkbox_input" (click)="showPassword()">Show Password</mat-checkbox>
+                    </section>
+                </div>
+                <div class="container_infotext">
+                    Not your computer? Use guest mode to sign in privately.
+                    <a href="https://support.google.com/chrome/answer/6130773?hl=en-GB" target="_blank"
+                        rel="noreferrer">
+                        Learn More
+                    </a>
+                </div>
+                <div class="container_buttons_container">
+                    <a mat-button class="btn-basic container_button text_bold" (click)="toggleRegister()">Create
+                        Account</a>
+                    <button type="submit" mat-raised-button class="btn-primary container_button prime_button"
+                        color="primary">Next</button>
+                </div>
+            </form>
+            <div class="mat-card">
+                <h2>Sign In</h2>
+                <div class="mat-card-content">
+                  <button mat-raised-button color="primary" (click)="signInGoogle()"> 
+                    <mat-icon>google</mat-icon>
+                    Sign in with Google
+                  </button>
+                  &nbsp;
+                  <button mat-raised-button color="primary">
+                    <mat-icon>facebook</mat-icon>
+                    Sign in with Facebook
+                  </button>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
