@@ -41,7 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
       preventDuplicates: true,
       extendedTimeOut: 500,
     }), // ToastrModule added
-    FormsModule,
+    // FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     // SocialLoginModule

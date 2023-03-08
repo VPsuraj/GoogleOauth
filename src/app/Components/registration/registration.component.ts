@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, FormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Subject } from 'rxjs';
@@ -16,12 +16,12 @@ export class RegistrationComponent implements OnInit {
 
   
 
-  registerForm!: FormGroup;
+  registerForm!: UntypedFormGroup;
   submitted = false;
   showPass = true;
 
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: UntypedFormBuilder,
     private toastr: ToastrService,
     private router: Router,
     private auth: AuthService) { }
